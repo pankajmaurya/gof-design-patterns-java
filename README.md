@@ -4,6 +4,10 @@ I got inspired to set this up after looking at the work by Prem Aseem Jain.
 That repo (https://github.com/premaseem/DesignPatternsJava9) is licensed as GPL v3.
 All diagrams and many code examples are his work. Hence this repository has been licenced as GPL v3.
 
+Additionally I am using code from an Apache License V2 repo https://github.com/girirajvyas/gof-design-patterns
+
+AFAIK, it should be fine to relicense that code under GPL v3.
+
 
 # Creational design patterns (5)
 
