@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class EmployeeManger {
+public class EmployeeManager {
 
 	List<Employee> emplyeelist = new ArrayList<Employee>();
 	Map<Integer, Employee> employeeMap = new HashMap<Integer, Employee>();
@@ -20,12 +20,12 @@ public class EmployeeManger {
 		return emplyeelist.remove(emp);
 	}
 
-	MaleEmplyeeIterator getMaleEmployeeIterator() {
-		return new MaleEmplyeeIterator(emplyeelist);
+	MaleEmployeeIterator getMaleEmployeeIterator() {
+		return new MaleEmployeeIterator(emplyeelist);
 	}
 
-	FeMaleEmplyeeIterator getFeMaleEmployeeIterator() {
-		return new FeMaleEmplyeeIterator(emplyeelist);
+	FemaleEmployeeIterator getFeMaleEmployeeIterator() {
+		return new FemaleEmployeeIterator(emplyeelist);
 	}
 
 	Iterator<Employee> getAllEmployeeIterator() {

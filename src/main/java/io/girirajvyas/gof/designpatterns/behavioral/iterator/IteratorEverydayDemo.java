@@ -19,18 +19,17 @@ public class IteratorEverydayDemo {
 		while (itr.hasNext()) {
 			String name = itr.next();
 			System.out.println(name);
+			System.out.println("Removed while iterating, only supported way is via remove: " + name);
 			itr.remove();
 		}
 		System.out.println("Names size: " + names.size());
 
+		names.add("Amar");
+		names.add("Anthony");
 		// foreach: iterate over an array or iterable
 		for (String name : names) {
 			System.out.println(name);
 		}
 
-		// if we change its type from list to set it wont work
-		for (int i = 0; i < names.size(); i++) {
-			System.out.println(names.get(i));
-		}
 	}
 }

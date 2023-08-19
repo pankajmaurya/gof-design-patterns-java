@@ -6,10 +6,11 @@ import java.util.Map.Entry;
 public class ClientForEmployeeIterator {
 
 	public static void main(String[] args) {
-		EmployeeManger employeeManager = new EmployeeManger();
-
 		System.out
-		        .println("This is Iterator Pattern example where you can list all the male / female emplyee list using iterators. The data structure details are abstraced behind the iterator interface ");
+				.println("This is Iterator Pattern example where you can list all the male / female employee list using iterators. " +
+						"The data structure details are abstracted behind the iterator interface ");
+
+		EmployeeManager employeeManager = new EmployeeManager();
 
 		employeeManager.addEmployee(new Employee("aseem1", "M"));
 		employeeManager.addEmployee(new Employee("Meera1", "f"));
@@ -25,22 +26,23 @@ public class ClientForEmployeeIterator {
 		employeeManager.employeeMap.put(1,new Employee("aseem1", "M"));
 		employeeManager.employeeMap.put(2,new Employee("aseem2", "F"));
 		employeeManager.employeeMap.put(3,new Employee("aseem3", "M"));
-		employeeManager.employeeMap.put(1,new Employee("aseem4", "F"));
+		employeeManager.employeeMap.put(4,new Employee("aseem4", "F"));
 		
-		MaleEmplyeeIterator maleEmployeeIterator = employeeManager.getMaleEmployeeIterator();
-		printEmployeeList(maleEmployeeIterator);
-		
-		FeMaleEmplyeeIterator feMaleEmployeeIterator = employeeManager.getFeMaleEmployeeIterator();
-		printEmployeeList(feMaleEmployeeIterator);
+		MaleEmployeeIterator maleEmployeeIterator = employeeManager.getMaleEmployeeIterator();
+//		printEmployeeList(maleEmployeeIterator);
+		printEmployeeListModern(maleEmployeeIterator);
+
+		FemaleEmployeeIterator feMaleEmployeeIterator = employeeManager.getFeMaleEmployeeIterator();
+		printEmployeeListModern(feMaleEmployeeIterator);
 		
 		Iterator<Employee> allEmployeeIterator = employeeManager.getAllEmployeeIterator();
 		printEmployeeList(allEmployeeIterator);
 		
-		printEmplyeeMap(employeeManager.printEmployeeMap());
+		printEmployeeMap(employeeManager.printEmployeeMap());
 
 	}
 
-	private static void printEmplyeeMap(Iterator<Entry<Integer, Employee>> iterator) {
+	private static void printEmployeeMap(Iterator<Entry<Integer, Employee>> iterator) {
 		System.out.println("Printing employee map ");
 		while (iterator.hasNext()) {
 			Entry<Integer, Employee> next = iterator.next();
@@ -54,5 +56,9 @@ public class ClientForEmployeeIterator {
 			System.out.println(iterator.next());
 		}
 	}
-	
+
+	private static void printEmployeeListModern(Iterator iterator) {
+		System.out.println("Printing the list for " + iterator.getClass().getSimpleName());
+		iterator.forEachRemaining(System.out::println);
+	}
 }

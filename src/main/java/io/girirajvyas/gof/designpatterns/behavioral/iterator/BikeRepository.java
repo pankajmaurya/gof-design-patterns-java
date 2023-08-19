@@ -26,7 +26,7 @@ public class BikeRepository implements Iterable<String> {
 
 	@Override
 	public Iterator<String> iterator() {
-		Iterator<String> iter = new Iterator<String>() {
+		Iterator<String> iter = new Iterator<>() {
 
 			private int currentIndex = 0;
 
