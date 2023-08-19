@@ -29,7 +29,7 @@ class ProxyImage implements Image {
 
 	@Override
 	public void loadImage() {
-		System.out.println("Proxy instianciating real Image ... ");
+		System.out.println("Proxy instantiating real Image ... ");
 		realImage = new RealImage();
 		realImage.loadImage();
 	}
@@ -45,7 +45,6 @@ class RealImage implements Image {
 
 	@Override
 	public int getHeight() {
-		// TODO Auto-generated method stub
 		return 300;
 	}
 

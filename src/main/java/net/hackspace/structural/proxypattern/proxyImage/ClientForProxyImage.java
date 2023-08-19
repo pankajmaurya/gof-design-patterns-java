@@ -10,8 +10,5 @@ public class ClientForProxyImage {
 		System.out.println(image.getHeight());
 		System.out.println(image.getWidht());
 		image.loadImage();
-
-		System.out.println("\n $$$$$$$$$$$$$$$$$$$$  Thanks by Prem Aseem $$$$$$$$$$$$$$$$$$$$$$ \n ");
-
 	}
 }
